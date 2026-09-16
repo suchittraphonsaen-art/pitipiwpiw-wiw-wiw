@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="th">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ทีมงาน - pitipiwpiw wiw wiw (ปิติปิ๋วปิ่ว วิววิว)</title>
+    <title>Document</title>
     <style>
         * {
             margin: 0;
@@ -12,36 +11,14 @@
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
-
         body {
-            background-color: #0d1117;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #fff;
-            padding: 3rem 0;
+            background-color: #000;
         }
-
-        .header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .header h1 {
-            font-size: 2.2rem;
-            color: #58a6ff;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            color: #8b949e;
-        }
-
         .wrapper {
             width: 90%;
             margin: 0 auto;
             max-width: 80rem;
         }
-
         .cols {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -52,45 +29,44 @@
             -ms-flex-pack: center;
             justify-content: center;
         }
-
         .col {
-            width: calc(33.333% - 2rem);
+            width: calc(25% - 2rem);
             margin: 1rem;
             cursor: pointer;
         }
-
         .container {
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
             -webkit-perspective: 1000px;
             perspective: 1000px;
         }
-
         .front,
         .back {
             background-size: cover;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            border-radius: 12px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
             background-position: center;
             -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             text-align: center;
-            min-height: 360px;
+            min-height: 280px;
+            box-shadow: 0 0 10px solid blue;
             height: auto;
+            border-radius: 10px;
             color: #fff;
-            position: relative;
-            overflow: hidden;
+            font-size: 1.5rem;
         }
-
         .back {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #cedce7;
+            background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+            background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+            background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
         }
-
         .front:after {
             position: absolute;
             top: 0;
@@ -100,28 +76,26 @@
             height: 100%;
             content: '';
             display: block;
-            opacity: .45;
+            opacity: .6;
             background-color: #000;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            border-radius: 12px;
+            border-radius: 10px;
         }
-
         .container:hover .front,
         .container:hover .back {
             -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
         }
-
         .back {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
         }
-
         .inner {
             -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
             transform: translateY(-50%) translateZ(60px) scale(0.94);
@@ -129,7 +103,7 @@
             position: absolute;
             left: 0;
             width: 100%;
-            padding: 1.5rem;
+            padding: 2rem;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             outline: 1px solid transparent;
@@ -137,187 +111,137 @@
             perspective: inherit;
             z-index: 2;
         }
-
         .container .back {
             -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
-
         .container .front {
             -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
-
         .container:hover .back {
             -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
-
         .container:hover .front {
             -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
-
-        .front .inner p.name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+        .front .inner p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
             position: relative;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
-
-        .front .inner p.name:after {
+        .front .inner p:after {
             content: '';
-            width: 3rem;
+            width: 4rem;
             height: 2px;
             position: absolute;
-            background: #58a6ff;
+            background: #C6D4DF;
             display: block;
             left: 0;
             right: 0;
             margin: 0 auto;
-            bottom: -.5rem;
+            bottom: -.75rem;
         }
-
-        .front .inner span.role {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 0.95rem;
-            display: block;
-            margin-top: 1rem;
+        .front .inner span {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Montserrat';
             font-weight: 300;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
-
-        .back .inner p.desc {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #d1d5db;
-        }
-
-        .back .inner h3 {
-            font-size: 1.1rem;
-            color: #58a6ff;
-            margin-bottom: 0.5rem;
-        }
-
         @media screen and (max-width: 64rem) {
+            .col {
+                width: calc(33.333333% - 2rem);
+            }
+        }
+        @media screen and (max-width: 48rem) {
             .col {
                 width: calc(50% - 2rem);
             }
         }
-
-        @media screen and (max-width: 48rem) {
+        @media screen and (max-width: 32rem) {
             .col {
                 width: 100%;
-                margin: 0 0 1.5rem 0;
+                margin: 0 0 2rem 0;
             }
         }
     </style>
 </head>
-
 <body>
-
-    <div class="header">
-        <h1>pitipiwpiw wiw wiw</h1>
-        <p>บริษัท ปิติปิ๋วปิ่ว วิววิว จำกัด — ทีมผู้บริหารและทีมงานหลัก</p>
-    </div>
-
     <div class="wrapper">
         <div class="cols">
 
-            <!-- 1. General Manager (GM) -->
+            <!-- การ์ดที่ 1 -->
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url('S__12304398.jpg')">
+                    <div class="front" style="background-image: url(https://cdn.phototourl.com/free/2026-09-16-2566ce0f-f86e-4832-87dc-940cb148d93c.jpg)">
                         <div class="inner">
-                            <p class="name">ทีมงาน 1</p>
-                            <span class="role">General Manager (GM)<br>ผู้จัดการทั่วไป</span>
+                            <p>VIW</p>
+                            <span>General Manager</span>
                         </div>
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h3>General Manager</h3>
-                            <p class="desc">กำกับดูแลภาพรวมและทิศทางกลยุทธ์ของ บริษัท ปิติปิ๋วปิ่ว วิววิว จำกัด เพื่อการเติบโตอย่างยั่งยืน</p>
+                            <p>บริษัท pitipiwpiw wiw wiw (ปิติปิ๋วปิ่ว วิววิว) ผู้นำองค์กรที่ดูแลภาพรวมและการดำเนินงานทั้งหมดของบริษัท.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. Operations Manager -->
+            <!-- การ์ดที่ 2 -->
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url('S__12304396.jpg')">
+                    <div class="front" style="background-image: url(https://cdn.phototourl.com/free/2026-09-16-103b8a16-c2bf-412b-88a9-ffa27f990105.jpg)">
                         <div class="inner">
-                            <p class="name">ทีมงาน 2</p>
-                            <span class="role">Operations Manager<br>ผู้จัดการฝ่ายปฏิบัติการ</span>
+                            <p>WA</p>
+                            <span>Business Development Executive</span>
                         </div>
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h3>Operations Manager</h3>
-                            <p class="desc">บริหารจัดการกระบวนการทำงานภายในองค์กรให้เป็นไปอย่างมีประสิทธิภาพ และราบรื่นในทุกขั้นตอน</p>
+                            <p>บริษัท pitipiwpiw wiw wiw (ปิติปิ๋วปิ่ว วิววิว) หาโอกาสทางธุรกิจใหม่ๆ เพื่อขยายฐานลูกค้าและสร้างรายได้ให้บริษัท.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. Business Development Executive -->
+            <!-- การ์ดที่ 3 -->
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url('S__8183815.jpg')">
+                    <div class="front" style="background-image: url(https://cdn.phototourl.com/free/2026-09-16-603c8a2a-857e-4f36-8ffd-0467bf9fb77a.jpg)">
                         <div class="inner">
-                            <p class="name">ทีมงาน 3</p>
-                            <span class="role">Business Development Executive<br>เจ้าหน้าที่พัฒนาธุรกิจ</span>
+                            <p>WIN</p>
+                            <span>Human Resources & Admin Officer</span>
                         </div>
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h3>Business Development</h3>
-                            <p class="desc">เสาะหาโอกาสทางธุรกิจใหม่ๆ สร้างพันธมิตร และขยายฐานลูกค้าให้กับองค์กรอย่างต่อเนื่อง</p>
+                            <p>บริษัท pitipiwpiw wiw wiw (ปิติปิ๋วปิ่ว วิววิว) ผู้ดูแล "คน" และ "ระบบสนับสนุนออฟฟิศ" ให้การทำงานราบรื่นและทุกคนมีความสุข.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. Senior Accountant -->
+            <!-- การ์ดที่ 4 -->
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url('S__37191700.jpg')">
+                    <div class="front" style="background-image: url(https://cdn.phototourl.com/free/2026-09-16-eab76a18-b358-4894-b2a5-13227243a506.jpg)">
                         <div class="inner">
-                            <p class="name">ทีมงาน 4</p>
-                            <span class="role">Senior Accountant<br>สมุห์บัญชี / นักบัญชีอาวุโส</span>
+                            <p>PIU</p>
+                            <span>Senior Accountant</span>
                         </div>
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h3>Senior Accountant</h3>
-                            <p class="desc">ดูแลระบบบัญชี การเงิน และการวางแผนภาษีของบริษัทอย่างถูกต้อง แม่นยำ และเป็นไปตามกฎหมาย</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. HR & Admin Officer -->
-            <div class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image: url('S__8183813.jpg')">
-                        <div class="inner">
-                            <p class="name">ทีมงาน 5</p>
-                            <span class="role">Human Resources & Admin Officer<br>เจ้าหน้าที่ทรัพยากรบุคคลและธุรการ</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <h3>HR & Admin Officer</h3>
-                            <p class="desc">บริหารทรัพยากรบุคคล สวัสดิการพนักงาน และสนับสนุนงานธุรการทั่วไปของบริษัท</p>
+                            <p>บริษัท pitipiwpiw wiw wiw (ปิติปิ๋วปิ่ว วิววิว) ผู้ดูแลความถูกต้องแม่นยำของระบบการเงินและบัญชีทั้งหมดในบริษัท.</p>
                         </div>
                     </div>
                 </div>
@@ -325,7 +249,5 @@
 
         </div>
     </div>
-
 </body>
-
 </html>
